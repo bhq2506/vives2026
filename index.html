@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI for Supply Chain Excellence · Vives International Staff Week 2026</title>
+<meta name="description" content="Self-study site for the workshop AI for Supply Chain Excellence: supply chain management, the SCOR model, artificial intelligence and competitive advantage. Dr Imam Baihaqi, ITS Surabaya, at Vives University, Kortrijk.">
+<meta property="og:title" content="AI for Supply Chain Excellence · Vives 2026">
+<meta property="og:description" content="Using the SCOR model to find where AI strengthens a company's competitive advantage.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#CC2C2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #CC2C2E;
+    --red-deep: #A82124;
+    --red-soft: #F28B8D;
+    --red-tint: #FBECEC;
+    --ink: #1E1E1E;
+    --text: #3A3A3A;
+    --muted: #6B6B6B;
+    --stone: #EEEDE9;
+    --stone-2: #DDDBD5;
+    --bg: #FFFFFF;
+    --card: #FFFFFF;
+    --border: #E2E0DA;
+    --serif: "Libre Baskerville", Georgia, serif;
+    --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    --w: 1080px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; }
+  a { color: var(--red); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--red-soft); outline-offset: 2px; }
+  h1, h2 { font-family: var(--serif); color: var(--ink); line-height: 1.2; font-weight: 700; }
+  h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); }
+  h3 { font-size: 1.15rem; color: var(--ink); line-height: 1.35; font-weight: 600; }
+  h4 { font-size: 1rem; color: var(--ink); font-weight: 600; }
+  p + p { margin-top: .8em; }
+  .wrap { max-width: var(--w); margin: 0 auto; padding: 0 22px; }
+  .eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+  .lead { font-size: 1.15rem; color: var(--ink); line-height: 1.55; }
+  .muted { color: var(--muted); }
+  .small { font-size: .9rem; }
+
+  /* Top navigation */
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: saturate(1.4) blur(8px); border-bottom: 1px solid var(--border); }
+  .topbar .wrap { display: flex; align-items: center; gap: 18px; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 700; white-space: nowrap; }
+  .brand .dot { width: 14px; height: 14px; background: var(--red); border-radius: 3px; }
+  .nav { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { text-decoration: none; color: var(--text); font-size: .88rem; font-weight: 600; padding: 7px 11px; border-radius: 6px; white-space: nowrap; }
+  .nav a:hover { background: var(--stone); }
+  .nav a.active { background: var(--red); color: #fff; }
+  .progress { height: 3px; background: var(--red); width: 0; position: absolute; left: 0; bottom: -1px; transition: width .1s; }
+
+  /* Hero */
+  .hero { background: var(--ink); color: #DADADA; padding: 72px 0 64px; position: relative; overflow: hidden; }
+  .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--red); }
+  .hero .eyebrow { color: var(--red-soft); }
+  .hero h1 { color: #fff; font-size: clamp(2.1rem, 5.6vw, 3.6rem); margin: 14px 0 18px; max-width: 16ch; }
+  .hero .lead { color: #fff; max-width: 60ch; }
+  .hero .meta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #4a4a4a; border-radius: 999px; padding: 6px 14px; font-size: .86rem; color: #EDEDED; }
+  .chip b { color: var(--red-soft); font-weight: 700; }
+  .hero .cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font: 600 .95rem var(--sans); padding: 11px 20px; border-radius: 8px; border: 2px solid var(--red); background: var(--red); color: #fff; text-decoration: none; cursor: pointer; transition: background .15s, transform .15s; }
+  .btn:hover { background: var(--red-deep); border-color: var(--red-deep); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: #fff; border-color: #6a6a6a; }
+  .btn.ghost:hover { border-color: #fff; background: transparent; }
+  .btn.line { background: #fff; color: var(--red); }
+  .btn.line:hover { background: var(--red-tint); }
+
+  /* Sections */
+  section.mod { padding: 72px 0; border-bottom: 1px solid var(--border); }
+  section.mod.alt { background: #FAF9F7; }
+  .mod-head { display: grid; grid-template-columns: auto 1fr; gap: 6px 22px; align-items: end; margin-bottom: 30px; }
+  .mod-num { font-family: var(--serif); font-size: 4rem; line-height: .9; color: var(--red); font-weight: 700; grid-row: span 2; }
+  .mod-head p.lead { grid-column: 1 / -1; margin-top: 12px; max-width: 70ch; }
+  .sub { margin-top: 44px; }
+  .sub > h3 { font-family: var(--serif); font-size: 1.35rem; margin-bottom: 12px; }
+  .prose { max-width: 72ch; }
+
+  .grid { display: grid; gap: 18px; }
+  .g2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .g3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .g4 { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+  .g5 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+  .card { background: var(--stone); border-radius: 10px; padding: 22px; }
+  .card h4 { margin-bottom: 6px; }
+  .card p { font-size: .95rem; }
+  .card .tag { display: inline-block; margin-top: 10px; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--red); }
+  .card.white { background: #fff; border: 1px solid var(--border); }
+  .card.dark { background: var(--ink); color: #DADADA; }
+  .card.dark h4 { color: #fff; }
+  .card.red { background: var(--red); color: #fff; }
+  .card.red h4 { color: #fff; }
+  .big { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--red); line-height: 1.1; margin-bottom: 6px; }
+  .card.dark .big { color: var(--red-soft); }
+
+  .band { background: var(--ink); color: #fff; border-radius: 10px; padding: 18px 22px; margin-top: 20px; }
+  .band b { color: var(--red-soft); display: block; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+  .note { border-left: 4px solid var(--red); background: var(--red-tint); padding: 14px 18px; border-radius: 0 8px 8px 0; margin-top: 18px; font-size: .95rem; }
+  .note b { color: var(--ink); }
+
+  /* Chain diagram */
+  .chain { display: flex; align-items: stretch; gap: 0; margin-top: 18px; flex-wrap: wrap; }
+  .node { flex: 1 1 140px; background: var(--stone); border-radius: 8px; padding: 16px 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+  .node b { color: var(--ink); display: block; font-size: .95rem; }
+  .node span { font-size: .82rem; color: var(--muted); }
+  .node.focal { background: var(--ink); }
+  .node.focal b { color: #fff; }
+  .node.focal span { color: #cfcfcf; }
+  .arr { flex: 0 0 26px; display: flex; align-items: center; justify-content: center; color: var(--red); font-weight: 700; font-size: 1.3rem; }
+  @media (max-width: 720px) { .chain { flex-direction: column; } .arr { transform: rotate(90deg); height: 26px; } }
+
+  /* Tables */
+  .tbl-wrap { overflow-x: auto; margin-top: 14px; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: .94rem; background: #fff; }
+  th { background: var(--ink); color: #fff; text-align: left; padding: 12px 14px; font-weight: 600; white-space: nowrap; }
+  td { padding: 12px 14px; border-top: 1px solid var(--border); vertical-align: top; }
+  td:first-child { font-weight: 700; color: var(--ink); white-space: nowrap; }
+  tr:nth-child(even) td { background: #FAF9F7; }
+
+  /* SCOR diagram */
+  .scor { display: grid; gap: 10px; margin-top: 18px; }
+  .scor .plan { background: var(--red); color: #fff; border-radius: 8px; padding: 14px 18px; }
+  .scor .exec { display: grid; grid-template-columns: .8fr 1fr 1fr 1fr .8fr; gap: 10px; }
+  .scor .exec > div { border-radius: 8px; padding: 14px; text-align: center; background: var(--stone); }
+  .scor .exec .end { background: var(--stone-2); }
+  .scor .exec .core { background: var(--ink); color: #fff; }
+  .scor .ret { background: #fff; border: 3px solid var(--red); border-radius: 8px; padding: 12px 18px; }
+  .scor b { display: block; font-size: 1.05rem; }
+  .scor span { font-size: .85rem; }
+  @media (max-width: 640px) { .scor .exec { grid-template-columns: 1fr; } }
+
+  /* Tabs */
+  .tabs { margin-top: 18px; }
+  .tablist { display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 2px solid var(--border); }
+  .tablist button { font: 600 .95rem var(--sans); background: none; border: 0; padding: 10px 16px; cursor: pointer; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -2px; }
+  .tablist button[aria-selected="true"] { color: var(--red); border-bottom-color: var(--red); }
+  .tabpanel { padding-top: 20px; }
+  .tabpanel[hidden] { display: none; }
+  .attr { margin-top: 16px; background: var(--ink); color: #fff; border-radius: 8px; padding: 14px 18px; font-size: .95rem; }
+  .attr b { color: var(--red-soft); }
+
+  /* Ladder */
+  .ladder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 14px; }
+  .ladder div { padding: 14px; border-radius: 8px; color: #fff; }
+  .ladder div:nth-child(1) { background: #8A8A8A; }
+  .ladder div:nth-child(2) { background: #5A5A5A; }
+  .ladder div:nth-child(3) { background: var(--ink); }
+  .ladder div:nth-child(4) { background: var(--red); }
+  .ladder b { display: block; }
+  .ladder span { font-size: .85rem; opacity: .9; }
+  @media (max-width: 640px) { .ladder { grid-template-columns: 1fr 1fr; } }
+
+  /* Flow (advantage chain) */
+  .flow { display: flex; flex-wrap: wrap; gap: 0; margin-top: 14px; }
+  .flow > div { flex: 1 1 150px; padding: 14px; background: var(--stone); border-radius: 8px; }
+  .flow > div:last-child { background: var(--red); color: #fff; }
+  .flow > div:last-child b { color: #fff; }
+  .flow b { display: block; color: var(--ink); }
+  .flow span { font-size: .85rem; }
+  .flow i { flex: 0 0 24px; display: flex; align-items: center; justify-content: center; font-style: normal; color: var(--red); font-weight: 700; }
+
+  /* Bullwhip widget */
+  .sim { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 22px; margin-top: 18px; }
+  .sim label { font-weight: 600; color: var(--ink); font-size: .95rem; }
+  .sim input[type=range] { width: 100%; accent-color: var(--red); margin: 8px 0 4px; }
+  .bars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: end; height: 200px; margin-top: 16px; }
+  .bars .col { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+  .bars .bar { width: 100%; max-width: 90px; background: var(--red); border-radius: 6px 6px 0 0; transition: height .25s; }
+  .bars .col:first-child .bar { background: var(--ink); }
+  .bars .val { font-weight: 700; color: var(--ink); font-size: .95rem; margin-bottom: 4px; }
+  .bars .lbl { font-size: .8rem; color: var(--muted); text-align: center; margin-top: 6px; min-height: 2.4em; }
+
+  /* Reflection */
+  details.reflect { background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--red); border-radius: 8px; margin-top: 18px; }
+  details.reflect summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: var(--ink); list-style: none; }
+  details.reflect summary::-webkit-details-marker { display: none; }
+  details.reflect summary::before { content: "›"; display: inline-block; margin-right: 10px; color: var(--red); transition: transform .2s; }
+  details.reflect[open] summary::before { transform: rotate(90deg); }
+  details.reflect .body { padding: 0 18px 16px 38px; font-size: .95rem; }
+
+  /* Quiz */
+  .quiz { background: var(--ink); color: #DADADA; border-radius: 12px; padding: 26px; margin-top: 48px; }
+  .quiz h3 { color: #fff; font-family: var(--serif); font-size: 1.3rem; }
+  .quiz .eyebrow { color: var(--red-soft); }
+  .q { margin-top: 20px; padding-top: 18px; border-top: 1px solid #3a3a3a; }
+  .q p.qt { color: #fff; font-weight: 600; }
+  .opts { display: grid; gap: 8px; margin-top: 10px; }
+  .opts button { text-align: left; font: 500 .95rem var(--sans); color: #EDEDED; background: #2A2A2A; border: 1px solid #444; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+  .opts button:hover:not([disabled]) { border-color: var(--red-soft); }
+  .opts button.right { background: #1f3b2a; border-color: #4caf7a; color: #fff; }
+  .opts button.wrong { background: #4a1f20; border-color: var(--red-soft); color: #fff; }
+  .opts button[disabled] { cursor: default; }
+  .fb { margin-top: 8px; font-size: .92rem; color: #DADADA; }
+  .fb b { color: var(--red-soft); }
+  .score { margin-top: 18px; font-weight: 700; color: #fff; }
+  .done-row { margin-top: 18px; display: flex; align-items: center; gap: 10px; }
+  .done-row input { width: 20px; height: 20px; accent-color: var(--red); }
+  .done-row label { color: #fff; font-weight: 600; cursor: pointer; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 300px 1fr; gap: 36px; align-items: start; }
+  @media (max-width: 820px) { .about { grid-template-columns: 1fr; } }
+  .profile { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-align: center; }
+  .profile .top { height: 90px; background: linear-gradient(160deg, var(--red) 0%, var(--red-deep) 100%); border-bottom: 4px solid var(--ink); }
+  .profile .avatar { width: 124px; height: 124px; border-radius: 50%; border: 5px solid #fff; object-fit: cover; margin: -62px auto 0; display: block; background: var(--stone); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  .profile .initials { width: 124px; height: 124px; border-radius: 50%; border: 5px solid #fff; margin: -62px auto 0; background: var(--red); color: #fff; font: 700 2.2rem var(--sans); display: none; align-items: center; justify-content: center; }
+  .profile h3 { font-family: var(--serif); font-size: 1.25rem; margin-top: 14px; }
+  .profile .role { color: var(--muted); font-size: .9rem; line-height: 1.45; margin: 6px 18px 0; }
+  .profile .inst { display: inline-block; margin-top: 10px; font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 2px solid var(--red); padding-bottom: 2px; }
+  .socials { display: flex; justify-content: center; gap: 10px; margin: 18px 0 22px; }
+  .socials a { width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--red); background: #fff; border: 1px solid var(--border); transition: background .15s, color .15s, transform .15s; }
+  .socials a:hover { background: var(--red); color: #fff; transform: translateY(-2px); }
+  .socials svg { width: 18px; height: 18px; fill: currentColor; }
+  .links { list-style: none; display: grid; gap: 12px; }
+  .links > li > a, .acc summary { display: flex; align-items: center; gap: 14px; padding: 15px 18px; background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--red); border-radius: 10px; color: var(--ink); text-decoration: none; font-weight: 600; transition: box-shadow .15s, transform .15s, border-color .15s; }
+  .links > li > a:hover { box-shadow: 0 6px 18px rgba(204,44,46,.12); transform: translateY(-1px); border-left-color: var(--ink); }
+  .links .ic { flex: none; width: 38px; height: 38px; border-radius: 9px; background: var(--red-tint); color: var(--red); display: flex; align-items: center; justify-content: center; }
+  .links .ic svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .links .txt { flex: 1; }
+  .links small { display: block; font-weight: 400; color: var(--muted); font-size: .82rem; }
+  .links .arrow { color: var(--muted); }
+  .acc { border-radius: 10px; }
+  .acc summary { cursor: pointer; list-style: none; }
+  .acc summary::-webkit-details-marker { display: none; }
+  .acc .chev { color: var(--muted); transition: transform .2s; }
+  .acc[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-left-color: var(--ink); }
+  .acc[open] .chev { transform: rotate(90deg); }
+  .acc .body { background: #fff; border: 1px solid var(--border); border-top: 0; border-left: 4px solid var(--ink); border-radius: 0 0 10px 10px; padding: 4px 18px 18px 70px; font-size: .95rem; line-height: 1.65; }
+  @media (max-width: 480px) { .acc .body { padding-left: 18px; } }
+  .acc .body.subl { display: grid; gap: 8px; }
+  .acc .body.subl a { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--ink); font-weight: 600; font-size: .92rem; }
+  .acc .body.subl a:hover { border-color: var(--red); background: var(--red-tint); }
+  .acc .body.subl small { display: inline; font-weight: 400; color: var(--muted); }
+  .acc .body.subl span { margin-left: auto; color: var(--muted); }
+
+  /* Agenda */
+  .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; margin-top: 20px; border-radius: 10px; overflow: hidden; }
+  .timeline > div { padding: 20px; background: var(--stone); border-right: 1px solid #fff; }
+  .timeline > div:nth-child(2) { background: var(--stone-2); }
+  .timeline > div:nth-child(3) { background: var(--ink); color: #DADADA; }
+  .timeline > div:nth-child(3) h4 { color: #fff; }
+  .timeline .big { font-size: 1.7rem; }
+  .timeline > div:nth-child(3) .big { color: var(--red-soft); }
+
+  .modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-top: 20px; }
+  .modules a { display: block; text-decoration: none; background: #fff; border: 1px solid var(--border); border-top: 4px solid var(--red); border-radius: 10px; padding: 18px; color: var(--text); transition: transform .15s, box-shadow .15s; position: relative; }
+  .modules a:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+  .modules .n { font-family: var(--serif); font-weight: 700; color: var(--red); font-size: 1.5rem; }
+  .modules b { display: block; color: var(--ink); margin: 4px 0; }
+  .modules span { font-size: .88rem; color: var(--muted); }
+  .modules .tick { position: absolute; top: 12px; right: 14px; font-size: .75rem; font-weight: 700; color: #fff; background: #3c8f5f; border-radius: 999px; padding: 2px 9px; display: none; }
+  .modules a.is-done .tick { display: inline-block; }
+
+  /* Canvas */
+  .canvas-tools { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin-top: 18px; }
+  .canvas-tools label { display: block; font-size: .85rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .canvas-tools select, .canvas-tools input { font: 500 .95rem var(--sans); padding: 9px 12px; border: 1px solid var(--border); border-radius: 8px; background: #fff; color: var(--ink); min-width: 220px; }
+  .cv td { padding: 8px; }
+  .cv td:first-child { white-space: nowrap; padding: 12px 14px; }
+  .cv textarea, .cv select { width: 100%; font: 400 .9rem var(--sans); border: 1px solid var(--border); border-radius: 6px; padding: 8px; color: var(--ink); background: #fff; resize: vertical; min-height: 64px; }
+  .cv select { min-height: 0; }
+  .cv .top3 { text-align: center; }
+  .cv .top3 input { width: 20px; height: 20px; accent-color: var(--red); }
+  .cv tr.example td { background: var(--red-tint) !important; font-size: .9rem; }
+  .cv-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .cv-actions .btn { font-size: .9rem; padding: 9px 16px; }
+  .toast { font-size: .9rem; color: #3c8f5f; font-weight: 600; align-self: center; }
+
+  ol.steps { list-style: none; counter-reset: s; display: grid; gap: 10px; margin-top: 14px; }
+  ol.steps li { counter-increment: s; background: var(--stone); border-radius: 8px; padding: 12px 16px 12px 56px; position: relative; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 16px; top: 11px; width: 26px; height: 26px; border-radius: 50%; background: var(--red); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: .85rem; }
+
+  .refs { padding-left: 22px; font-size: .95rem; }
+  .refs li + li { margin-top: 6px; }
+
+  footer.site { background: var(--ink); color: #B5B5B5; padding: 34px 0; font-size: .88rem; }
+  footer.site a { color: #fff; }
+  footer.site .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; }
+
+  .totop { position: fixed; right: 18px; bottom: 18px; width: 44px; height: 44px; border-radius: 50%; background: var(--red); color: #fff; border: 0; font-size: 1.2rem; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,.2); opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .totop.show { opacity: 1; pointer-events: auto; }
+
+  @media print {
+    .topbar, .hero .cta, .totop, .quiz, .cv-actions, .canvas-tools .btn, footer.site { display: none !important; }
+    section.mod { padding: 24px 0; break-inside: avoid-page; }
+    .hero { background: #fff; color: #000; }
+    .hero h1, .hero .lead { color: #000; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dot"></span>Vives 2026</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#lecturer">Lecturer</a>
+      <a href="#overview">Overview</a>
+      <a href="#m1">1 · Supply chains</a>
+      <a href="#m2">2 · SCOR</a>
+      <a href="#m3">3 · AI</a>
+      <a href="#m4">4 · AI × SCOR</a>
+      <a href="#m5">5 · Workshop</a>
+    </nav>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">International Staff Week 2026 · Vives University, Kortrijk</p>
+    <h1>AI for Supply Chain Excellence</h1>
+    <p class="lead">Using the SCOR model to find where artificial intelligence strengthens a company’s competitive advantage. A self-study companion to the workshop.</p>
+    <div class="meta">
+      <span class="chip"><b>90 min</b> lecture</span>
+      <span class="chip"><b>30 min</b> group work</span>
+      <span class="chip"><b>60 min</b> presentations</span>
+      <span class="chip">No prior knowledge assumed</span>
+    </div>
+    <div class="cta">
+      <a class="btn" href="#m1">Start studying</a>
+      <a class="btn ghost" href="#m5">Go to the workshop task</a>
+    </div>
+  </div>
+</div>
+
+<!-- LECTURER -->
+<section class="mod" id="lecturer">
+  <div class="wrap">
+    <p class="eyebrow">Your lecturer</p>
+    <h2 style="margin:8px 0 28px">About me</h2>
+    <div class="about">
+      <div class="profile">
+        <div class="top" aria-hidden="true"></div>
+        <img class="avatar" src="avatar.jpg" alt="Dr Imam Baihaqi"
+             onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://bhq2506.github.io/learning/me/avatar.jpg';}else{this.style.display='none';document.querySelector('.profile .initials').style.display='flex';}">
+        <div class="initials" aria-hidden="true">IB</div>
+        <h3>Dr Imam Baihaqi</h3>
+        <p class="role">Vice Rector of Human Resources, Organization<br>&amp; Information System Technology</p>
+        <a class="inst" href="https://www.its.ac.id" target="_blank" rel="noopener">Institut Teknologi Sepuluh Nopember</a>
+        <nav class="socials" aria-label="Social profiles">
+      <a href="mailto:ibaihaqi@its.ac.id" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
+      </a>
+      <a href="https://x.com/mambaihaqi" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg>
+      </a>
+      <a href="https://instagram.com/ibaihaqi" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13a5.9 5.9 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/baihaqi" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </nav>
+      </div>
+
+      <ul class="links">
+        <li>
+          <details class="acc" open>
+            <summary>
+              <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+              <span class="txt">About Me<small>Short biography</small></span>
+              <span class="chev" aria-hidden="true">›</span>
+            </summary>
+            <div class="body">
+              <p>Dr Imam Baihaqi is Vice Rector of Human Resources, Organization &amp; Information System Technology at <a href="https://www.its.ac.id" target="_blank" rel="noopener">Institut Teknologi Sepuluh Nopember (ITS)</a> and an Associate Professor of Operations and Supply Chain Management in the Department of Business Management.</p>
+              <p>He holds a PhD in Operations and Supply Chain Management from Monash University, an MSc in Information Management from Lancaster University, and a BEng in Industrial Engineering from <a href="https://www.its.ac.id" target="_blank" rel="noopener">ITS</a>. He has taught at Monash University’s Sunway Campus in Malaysia and held an invited position at National Yunlin University of Science and Technology in Taiwan.</p>
+              <p>His research uses field surveys and case studies to study operations &amp; supply chain management in Indonesia, covering digital traceability, halal supply chains, IoT adoption, and frugal innovation.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details class="acc">
+            <summary>
+              <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+              <span class="txt">My Scholarly Profile<small>ITS Scholar, Google Scholar, ORCID, Scopus</small></span>
+              <span class="chev" aria-hidden="true">›</span>
+            </summary>
+            <div class="body subl">
+              <a href="https://scholar.its.ac.id/en/persons/imam-baihaqi-2/" target="_blank" rel="noopener">ITS Scholar<span>›</span></a>
+              <a href="https://scholar.google.com/citations?user=E18htnsAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar<span>›</span></a>
+              <a href="https://orcid.org/0000-0001-6815-061X" target="_blank" rel="noopener">ORCID <small>0000-0001-6815-061X</small><span>›</span></a>
+              <a href="https://www.scopus.com/authid/detail.uri?authorId=56174750400" target="_blank" rel="noopener">Scopus <small>Author ID 56174750400</small><span>›</span></a>
+            </div>
+          </details>
+        </li>
+        <li>
+          <a href="https://calendar.google.com/calendar/embed?src=ibaihaqi%40gmail.com&amp;ctz=Asia%2FJakarta" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <span class="txt">My Schedule<small>View my calendar</small></span>
+            <span class="arrow" aria-hidden="true">›</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://calendar.app.google/oZ8Af51PvsK4mT1p8" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span class="txt">Appointment<small>Book a meeting slot</small></span>
+            <span class="arrow" aria-hidden="true">›</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="mod alt" id="overview">
+  <div class="wrap">
+    <p class="eyebrow">The workshop</p>
+    <h2 style="margin:8px 0 14px">Three hours, three parts</h2>
+    <p class="lead prose">Guiding question: <b>Where in a supply chain can AI contribute most to competitive advantage, and how do we argue that systematically?</b></p>
+
+    <div class="timeline">
+      <div><div class="big">90 min</div><h4>Lecture</h4><p class="small">Supply chains and supply chain management, the SCOR model, and how SCOR helps to locate AI applications.</p></div>
+      <div><div class="big">30 min</div><h4>Group work</h4><p class="small">Each group selects a case company and analyses its supply chain with the SCOR canvas.</p></div>
+      <div><div class="big">60 min</div><h4>Group presentations</h4><p class="small">Each group presents where AI can raise the efficiency and effectiveness of its company’s supply chain.</p></div>
+    </div>
+
+    <div class="sub">
+      <h3>What you will be able to do</h3>
+      <div class="grid g4">
+        <div class="card white"><div class="big">1</div><h4>Explain</h4><p>Describe what a supply chain is and what supply chain management aims to achieve.</p></div>
+        <div class="card white"><div class="big">2</div><h4>Map</h4><p>Describe any company’s supply chain using the five SCOR processes.</p></div>
+        <div class="card white"><div class="big">3</div><h4>Measure</h4><p>Link supply chain performance to the five SCOR performance attributes.</p></div>
+        <div class="card white"><div class="big">4</div><h4>Propose</h4><p>Identify and justify AI applications that improve a specific process and metric.</p></div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Study path</h3>
+      <p class="muted small">Work through the modules in order. Each ends with a short self-check; tick “I have completed this module” to track your progress on this device.</p>
+      <div class="modules" id="modcards">
+        <a href="#m1" data-mod="m1"><span class="tick">Done</span><span class="n">1</span><b>Supply chains &amp; SCM</b><span>Coca-Cola, Zara, flows, strategy, challenges</span></a>
+        <a href="#m2" data-mod="m2"><span class="tick">Done</span><span class="n">2</span><b>The SCOR model</b><span>Five processes, attributes, levels</span></a>
+        <a href="#m3" data-mod="m3"><span class="tick">Done</span><span class="n">3</span><b>Artificial intelligence</b><span>Types, capabilities, business roles, advantage</span></a>
+        <a href="#m4" data-mod="m4"><span class="tick">Done</span><span class="n">4</span><b>AI through the SCOR lens</b><span>Process by process, to competitive advantage</span></a>
+        <a href="#m5" data-mod="m5"><span class="tick">Done</span><span class="n">5</span><b>The workshop</b><span>Task, cases, canvas, presentation</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 1 -->
+<section class="mod" id="m1">
+  <div class="wrap">
+    <div class="mod-head">
+      <div class="mod-num">1</div>
+      <p class="eyebrow">Module 1</p>
+      <h2>Supply Chain and Supply Chain Management</h2>
+      <p class="lead">Before any technology, we need a clear picture of what a supply chain is, what managing it means, and why it is hard.</p>
+    </div>
+
+    <div class="sub">
+      <h3>A question to start</h3>
+      <div class="card red"><h4 style="font-family:var(--serif);font-size:1.4rem">How does a bottle of Coke reach the customer’s hand?</h4><p style="font-size:1rem">Take one minute: name every company that has to do something before you can buy it.</p></div>
+      <details class="reflect">
+        <summary>Write your list first, then open this</summary>
+        <div class="body">Most people name the shop and the factory. Look further back: who makes the bottle or can, where the sugar comes from, who owns the recipe, who drives the truck, who stocks the vending machine. The next diagram organises these answers.</div>
+      </details>
+    </div>
+
+    <div class="sub">
+      <h3>Example 1 · One bottle, many companies</h3>
+      <div class="chain">
+        <div class="node"><b>Suppliers</b><span>sugar, water, CO₂, bottles, cans</span></div><div class="arr">→</div>
+        <div class="node focal"><b>The Coca-Cola Company</b><span>owns the brand, makes the concentrate</span></div><div class="arr">→</div>
+        <div class="node"><b>Bottling partner</b><span>mixes, fills, packages, distributes</span></div><div class="arr">→</div>
+        <div class="node"><b>Retailers and outlets</b><span>shops, cafés, vending machines</span></div><div class="arr">→</div>
+        <div class="node"><b>You</b><span>the consumer</span></div>
+      </div>
+      <div class="grid g3" style="margin-top:18px">
+        <div class="card"><h4>Separate companies</h4><p>Most bottlers are independent firms. In Belgium the bottler is Coca-Cola Europacific Partners, not The Coca-Cola Company.</p></div>
+        <div class="card"><h4>Global recipe, local production</h4><p>Concentrate travels far; the heavy finished drink is produced close to the market where it is sold. A drink is mostly water, so it is cheaper to ship concentrate and add water locally.</p></div>
+        <div class="card"><h4>The journey continues</h4><p>Your purchase sends information and money back up the chain, and the empty bottle starts a return journey.</p></div>
+      </div>
+      <div class="band"><b>The point</b>No single company brings the bottle to you. Each one depends on the others doing their part on time: that network is a supply chain.</div>
+    </div>
+
+    <div class="sub">
+      <h3>What is a supply chain?</h3>
+      <p class="lead prose">The network of organisations that turns raw materials into a product or service in the customer’s hands.</p>
+      <div class="chain">
+        <div class="node"><b>Raw material suppliers</b></div><div class="arr">→</div>
+        <div class="node"><b>Component suppliers</b></div><div class="arr">→</div>
+        <div class="node focal"><b>Manufacturer</b><span>focal company</span></div><div class="arr">→</div>
+        <div class="node"><b>Distributors and retailers</b></div><div class="arr">→</div>
+        <div class="node"><b>End customers</b></div>
+      </div>
+      <div class="grid g3" style="margin-top:18px">
+        <div class="card white"><h4>Materials and products</h4><p>Flow downstream, towards the customer. Returns flow back upstream.</p><span class="tag">Downstream ↓</span></div>
+        <div class="card white"><h4>Information</h4><p>Flows in both directions: orders, forecasts, stock levels, delivery status.</p><span class="tag">Both ways ↕</span></div>
+        <div class="card white"><h4>Money</h4><p>Flows upstream, from the customer back to every supplier in the chain. The customer is the only source of money entering the chain.</p><span class="tag">Upstream ↑</span></div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>What is supply chain management?</h3>
+      <p class="lead prose">The coordinated planning and execution of material, information and money flows <b>across</b> companies, to serve the customer at the lowest total cost.</p>
+      <div class="grid g3" style="margin-top:16px">
+        <div class="card"><h4>Integrate</h4><p>Connect purchasing, production, logistics and sales inside the firm, and connect the firm with its suppliers and customers.</p></div>
+        <div class="card"><h4>Match supply with demand</h4><p>Have the right product, in the right quantity, at the right place and time.</p></div>
+        <div class="card"><h4>Manage trade-offs</h4><p>Balance service against cost: more stock and faster delivery please the customer but cost money.</p></div>
+      </div>
+      <div class="note"><b>Logistics vs supply chain management.</b> Logistics optimises the movement and storage of goods, typically within one company. Supply chain management coordinates decisions <i>between</i> companies.</div>
+    </div>
+
+    <div class="sub">
+      <h3>Supply chains compete, not companies</h3>
+      <div class="grid g2">
+        <div class="card"><span class="tag" style="margin:0 0 6px">Efficiency</span><h4>The efficient supply chain</h4><p>Goal: the lowest possible cost and high use of assets. Suits products with stable, predictable demand, such as staple groceries.</p></div>
+        <div class="card dark"><span class="tag" style="margin:0 0 6px;color:var(--red-soft)">Effectiveness</span><h4>The responsive supply chain</h4><p>Goal: speed, flexibility and reliable service. Suits products with uncertain demand and short life cycles, such as fashion.</p></div>
+      </div>
+      <div class="band"><b>Strategic fit</b>Advantage comes from matching the supply chain to the product and the competitive strategy (Fisher, 1997). A company can win on cost, on service, or on a deliberate balance of both.</div>
+      <details class="reflect">
+        <summary>Check yourself: which chain would a discount supermarket need? A fast-fashion brand?</summary>
+        <div class="body">A discount supermarket sells mostly predictable, low-margin staples, so it needs an <b>efficient</b> chain: full trucks, high stock turns, few product variants. A fast-fashion brand faces uncertain demand and short product lives, so it needs a <b>responsive</b> chain, even at higher cost. Many firms run both: a grocer can be efficient for tinned food and responsive for fresh bread.</div>
+      </details>
+    </div>
+
+    <div class="sub">
+      <h3>Example 2 · Zara: a supply chain built for speed</h3>
+      <div class="chain">
+        <div class="node"><b>Design</b><span>in-house, at headquarters in Spain</span></div><div class="arr">→</div>
+        <div class="node"><b>Manufacturers</b><span>many in Spain, Portugal, Morocco, Turkey</span></div><div class="arr">→</div>
+        <div class="node focal"><b>Logistics centres</b><span>centralised in Spain</span></div><div class="arr">→</div>
+        <div class="node"><b>Stores and online</b><span>worldwide</span></div>
+      </div>
+      <div class="grid g3" style="margin-top:18px">
+        <div class="card"><h4>Deliveries twice a week</h4><p>Stores receive small shipments of new products twice a week instead of large seasonal deliveries.</p></div>
+        <div class="card"><h4>Proximity sourcing</h4><p>Many manufacturers are located close to headquarters, which keeps lead times short during the season.</p></div>
+        <div class="card"><h4>Information flows back</h4><p>Stores order at fixed times each week, so sales data continuously steer design and production.</p></div>
+      </div>
+      <div class="band"><b>The trade-off</b>Zara, part of Inditex, accepts higher operating intensity in exchange for flexibility: a responsive supply chain that supports a fast-fashion strategy. Contrast it with a retailer that orders a full season months ahead from distant suppliers.</div>
+    </div>
+
+    <div class="sub">
+      <h3>Four persistent challenges</h3>
+      <div class="grid g4">
+        <div class="card"><h4>Demand uncertainty</h4><p>Forecasts are always wrong to some degree, and small changes in customer demand are amplified upstream: the bullwhip effect.</p></div>
+        <div class="card"><h4>Complexity</h4><p>Thousands of products, many tiers of suppliers and several sales channels must be coordinated at once.</p></div>
+        <div class="card"><h4>Disruption and risk</h4><p>Supplier failures, transport delays, extreme weather and geopolitical events interrupt the flow.</p></div>
+        <div class="card"><h4>Sustainability</h4><p>Customers and regulators expect lower emissions, less waste and transparency about where products come from.</p></div>
+      </div>
+
+      <div class="sim" id="bullwhip">
+        <label for="bw">Try it: the bullwhip effect. Shop sales rise by <span id="bwv">10</span>%</label>
+        <input type="range" id="bw" min="0" max="30" value="10" step="1">
+        <p class="small muted">Each stage sees only the orders of the stage below it and adds a safety margin “just in case”. This is a simplified illustration (each stage over-reacts by 1.6×), not a forecast; the mechanism was described by Lee, Padmanabhan and Whang (1997).</p>
+        <div class="bars" aria-live="polite">
+          <div class="col"><span class="val" id="b0"></span><div class="bar" id="h0"></div><span class="lbl">Shop sales</span></div>
+          <div class="col"><span class="val" id="b1"></span><div class="bar" id="h1"></div><span class="lbl">Retailer orders</span></div>
+          <div class="col"><span class="val" id="b2"></span><div class="bar" id="h2"></div><span class="lbl">Wholesaler orders</span></div>
+          <div class="col"><span class="val" id="b3"></span><div class="bar" id="h3"></div><span class="lbl">Factory orders</span></div>
+        </div>
+      </div>
+
+      <div class="band"><b>The common thread</b>Each challenge forces managers to decide quickly with incomplete information. That is exactly the kind of problem AI is designed to support.</div>
+    </div>
+
+    <div class="quiz" data-quiz="m1">
+      <p class="eyebrow">Self-check</p>
+      <h3>Module 1 in three questions</h3>
+      <div class="q" data-answer="1" data-why="Money enters the chain only when the end customer pays; it then flows upstream to every supplier.">
+        <p class="qt">In which direction does money flow in a supply chain?</p>
+        <div class="opts"><button>Downstream, towards the customer</button><button>Upstream, from the customer back to suppliers</button><button>Only between the manufacturer and its retailers</button></div>
+      </div>
+      <div class="q" data-answer="2" data-why="Fashion has uncertain demand and short life cycles, so speed and flexibility matter more than lowest cost (Fisher, 1997).">
+        <p class="qt">Which type of supply chain fits a fast-fashion brand best?</p>
+        <div class="opts"><button>An efficient chain with large seasonal orders</button><button>Any chain, as long as costs are lowest</button><button>A responsive chain that trades some cost for speed and flexibility</button></div>
+      </div>
+      <div class="q" data-answer="0" data-why="Small swings in consumer demand become larger swings in orders at each step upstream.">
+        <p class="qt">What is the bullwhip effect?</p>
+        <div class="opts"><button>Demand variation amplifying as it moves upstream</button><button>Returns flowing back from customers</button><button>Prices rising after a supply disruption</button></div>
+      </div>
+      <p class="score"></p>
+      <div class="done-row"><input type="checkbox" id="done-m1" data-done="m1"><label for="done-m1">I have completed this module</label></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 2 -->
+<section class="mod alt" id="m2">
+  <div class="wrap">
+    <div class="mod-head">
+      <div class="mod-num">2</div>
+      <p class="eyebrow">Module 2</p>
+      <h2>The SCOR Model</h2>
+      <p class="lead">The Supply Chain Operations Reference (SCOR) model is a standard way to describe, measure and improve any supply chain. It gives us a shared map and shared metrics.</p>
+    </div>
+
+    <div class="grid g3">
+      <div class="card white"><h4>Where it comes from</h4><p>Introduced in 1996 by the Supply Chain Council, an industry consortium. Maintained today by the Association for Supply Chain Management (ASCM).</p></div>
+      <div class="card white"><h4>What it contains</h4><p>Standard processes, performance metrics and good practices, organised in one framework.</p></div>
+      <div class="card white"><h4>Why companies use it</h4><p>To map a supply chain, compare its performance with others, and find where improvement is needed.</p></div>
+    </div>
+    <div class="note"><b>Which version?</b> This workshop uses the classic SCOR model with its five core processes: Plan, Source, Make, Deliver and Return. It is the version most textbooks teach and the easiest to apply in a short exercise. Later versions added a sixth process, Enable, and ASCM’s current release, the SCOR Digital Standard (2022), reorganises the model into seven processes. The logic of the analysis is the same.</div>
+
+    <div class="sub">
+      <h3>Five management processes</h3>
+      <div class="scor">
+        <div class="plan"><b>Plan</b><span>Balances demand and supply, and sets the course for all the processes below.</span></div>
+        <div class="exec">
+          <div class="end"><b>Suppliers</b></div>
+          <div class="core"><b>Source</b><span>buy</span></div>
+          <div class="core"><b>Make</b><span>produce</span></div>
+          <div class="core"><b>Deliver</b><span>fulfil orders</span></div>
+          <div class="end"><b>Customers</b></div>
+        </div>
+        <div class="ret"><b>← Return</b><span>The reverse flow: products coming back from customers, and materials going back to suppliers.</span></div>
+      </div>
+      <div class="band"><b>Linking companies</b>Every company in the chain has its own five processes: one firm’s Deliver connects to the next firm’s Source.</div>
+      <details class="reflect">
+        <summary>Apply it: the Coca-Cola bottler through SCOR</summary>
+        <div class="body"><b>Source</b> is the concentrate and packaging it buys; <b>Make</b> is mixing and filling; <b>Deliver</b> is the route to shops and cafés; <b>Return</b> is the empty bottle and crate; <b>Plan</b> decides how much of each drink to produce for next week’s demand.</div>
+      </details>
+    </div>
+
+    <div class="sub">
+      <h3>What each process covers</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Process</th><th>Scope</th><th>Typical decisions</th></tr></thead>
+        <tbody>
+          <tr><td>Plan</td><td>Balancing aggregate demand and supply into a workable plan</td><td>How much should we forecast, stock and produce?</td></tr>
+          <tr><td>Source</td><td>Procuring goods and services to meet planned or actual demand</td><td>Which suppliers, what quantities, and when?</td></tr>
+          <tr><td>Make</td><td>Transforming materials into finished products</td><td>What do we produce, in which sequence, at what quality?</td></tr>
+          <tr><td>Deliver</td><td>Order management, warehousing, transport and installation</td><td>How do we promise, pick, ship and route orders?</td></tr>
+          <tr><td>Return</td><td>Receiving returned products and sending materials back to suppliers</td><td>What do we accept back, repair, resell or recycle?</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note"><b>Keep your eye on the right-hand column.</b> AI improves a supply chain by improving its decisions.</div>
+    </div>
+
+    <div class="sub">
+      <h3>Worked example · Zara through the SCOR lens</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Process</th><th>What Zara does</th><th>A decision AI could support</th></tr></thead>
+        <tbody>
+          <tr><td>Plan</td><td>Sends small first quantities, then adjusts in season from store sales data</td><td>How many units should each store get first?</td></tr>
+          <tr><td>Source</td><td>Uses many manufacturers close to Spain: Spain, Portugal, Morocco, Turkey</td><td>Which supplier can deliver fastest at acceptable risk?</td></tr>
+          <tr><td>Make</td><td>Makes trend-sensitive items with short lead times</td><td>In which order should we produce?</td></tr>
+          <tr><td>Deliver</td><td>Stores order at fixed times; logistics centres in Spain ship to every store twice a week</td><td>What will each store sell next week, and how should each shipment be routed?</td></tr>
+          <tr><td>Return</td><td>Moves, resells or recycles unsold and returned items</td><td>Where will a returned item sell best?</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small muted" style="margin-top:10px">The right-hand column contains teaching questions, not claims about systems Zara has implemented. This is the standard of analysis you will produce for your own case company: one row per process, concrete and specific.</p>
+    </div>
+
+    <div class="sub">
+      <h3>Five performance attributes</h3>
+      <div class="grid g5">
+        <div class="card white"><span class="tag" style="margin:0 0 4px">Customer-facing</span><h4>Reliability</h4><p>Delivering as promised.</p><p class="small muted">Metric: perfect order fulfilment</p></div>
+        <div class="card white"><span class="tag" style="margin:0 0 4px">Customer-facing</span><h4>Responsiveness</h4><p>Speed of delivery.</p><p class="small muted">Metric: order fulfilment cycle time</p></div>
+        <div class="card white"><span class="tag" style="margin:0 0 4px">Customer-facing</span><h4>Agility</h4><p>Ability to respond to change.</p><p class="small muted">Metrics: supply chain adaptability, value at risk</p></div>
+        <div class="card"><span class="tag" style="margin:0 0 4px;color:var(--muted)">Internal-facing</span><h4>Costs</h4><p>Cost of running the chain.</p><p class="small muted">Metric: total cost to serve</p></div>
+        <div class="card"><span class="tag" style="margin:0 0 4px;color:var(--muted)">Internal-facing</span><h4>Asset management</h4><p>Efficient use of assets.</p><p class="small muted">Metrics: cash-to-cash cycle time, return on fixed assets</p></div>
+      </div>
+      <div class="band"><b>Linking back to competitive advantage</b>Customer-facing attributes express effectiveness. Internal-facing attributes express efficiency. No company leads on all five: a strategy states which of them the company must lead on.</div>
+      <div class="grid g2" style="margin-top:16px">
+        <div class="note" style="margin:0"><b>Perfect order:</b> delivered complete, on time, undamaged and with correct documentation.</div>
+        <div class="note" style="margin:0"><b>Cash-to-cash cycle time:</b> the time between paying suppliers and being paid by customers.</div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Four levels of detail</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Level</th><th>Name</th><th>What it defines</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Process types</td><td>The scope of the supply chain</td><td>Plan, Source, Make, Deliver, Return</td></tr>
+          <tr><td>2</td><td>Process categories</td><td>How the supply chain is configured</td><td>Make-to-stock, make-to-order, engineer-to-order</td></tr>
+          <tr><td>3</td><td>Process elements</td><td>The steps inside each category, with metrics and practices</td><td>Schedule production, pick product, receive product</td></tr>
+          <tr><td>4</td><td>Activities</td><td>Company-specific implementation, outside the SCOR model</td><td>A firm’s own work instructions</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note"><b>In this workshop</b> you will work at level 1. Five processes are enough to structure a first analysis of any company.</div>
+    </div>
+
+    <div class="quiz" data-quiz="m2">
+      <p class="eyebrow">Self-check</p>
+      <h3>Module 2 in three questions</h3>
+      <div class="q" data-answer="2" data-why="Return is the reverse flow: products back from customers and materials back to suppliers.">
+        <p class="qt">A web shop receives a parcel of shoes sent back by a customer. Which SCOR process handles this?</p>
+        <div class="opts"><button>Deliver</button><button>Source</button><button>Return</button></div>
+      </div>
+      <div class="q" data-answer="0" data-why="Responsiveness is the speed of delivery, measured by order fulfilment cycle time.">
+        <p class="qt">“Order fulfilment cycle time” measures which performance attribute?</p>
+        <div class="opts"><button>Responsiveness</button><button>Asset management</button><button>Costs</button></div>
+      </div>
+      <div class="q" data-answer="1" data-why="Costs and asset management face inward and express efficiency; reliability, responsiveness and agility face the customer and express effectiveness.">
+        <p class="qt">Which pair of attributes expresses efficiency?</p>
+        <div class="opts"><button>Reliability and agility</button><button>Costs and asset management</button><button>Responsiveness and reliability</button></div>
+      </div>
+      <p class="score"></p>
+      <div class="done-row"><input type="checkbox" id="done-m2" data-done="m2"><label for="done-m2">I have completed this module</label></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 3 -->
+<section class="mod" id="m3">
+  <div class="wrap">
+    <div class="mod-head">
+      <div class="mod-num">3</div>
+      <p class="eyebrow">Module 3</p>
+      <h2>Artificial Intelligence in Business</h2>
+      <p class="lead">AI is software that performs tasks which normally require human intelligence. This module covers what it is, its main types, what it does in business, and when it creates competitive advantage.</p>
+    </div>
+
+    <div class="sub" style="margin-top:0">
+      <h3>A general understanding</h3>
+      <div class="prose">
+        <p>Traditional software follows rules that people write. Most modern AI is different: it <b>learns patterns from data</b> and uses them to predict, classify, recognise or generate. That makes it useful where rules are hard to write down, for example recognising a defect in a photo or estimating next week’s demand for each product in each shop.</p>
+        <p>Two consequences follow. First, AI is only as good as the data it learns from. Second, its outputs are <b>probabilities, not certainties</b>: a forecast or a recommendation can be wrong, so people still need to judge when to trust it.</p>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Four types of AI</h3>
+      <div class="grid g4">
+        <div class="card"><h4>Rule-based systems</h4><p>Experts write explicit “if this, then that” rules. Transparent, but unable to handle situations nobody foresaw.</p><span class="tag">e.g. a fixed reorder rule</span></div>
+        <div class="card"><h4>Machine learning</h4><p>Algorithms learn patterns from historical data in order to predict or classify.</p><span class="tag">e.g. a sales forecast</span></div>
+        <div class="card"><h4>Deep learning</h4><p>Neural networks with many layers learn from images, sound and text.</p><span class="tag">e.g. spotting defects in photos</span></div>
+        <div class="card"><h4>Generative AI</h4><p>Large models create new text, images or code in response to a prompt.</p><span class="tag">e.g. a chat assistant</span></div>
+      </div>
+      <div class="band"><b>How they relate</b>Deep learning is a branch of machine learning, and generative AI is built on deep learning. Business applications are narrow AI: each is built for a specific task. Newer is not always better: a simple rule or a classical forecast often beats generative AI on a numerical planning problem.</div>
+    </div>
+
+    <div class="sub">
+      <h3>Five things AI can do</h3>
+      <p class="prose">A working classification for this workshop. You will use these five verbs to label every idea in your group work.</p>
+      <div class="grid g5" style="margin-top:14px">
+        <div class="card dark"><div class="big">Predict</div><p>Machine learning estimates what will happen: demand, delays, failures.</p><span class="tag" style="color:#B5B5B5">a weather app</span></div>
+        <div class="card dark"><div class="big">Perceive</div><p>Computer vision and language models read images, sensors, text and speech.</p><span class="tag" style="color:#B5B5B5">face unlock</span></div>
+        <div class="card dark"><div class="big">Optimise</div><p>Algorithms recommend the best decision within given constraints.</p><span class="tag" style="color:#B5B5B5">a navigation route</span></div>
+        <div class="card dark"><div class="big">Generate</div><p>Generative AI drafts, summarises and answers questions in natural language.</p><span class="tag" style="color:#B5B5B5">a chatbot</span></div>
+        <div class="card dark"><div class="big">Act</div><p>Robots and software agents carry out tasks with limited human input.</p><span class="tag" style="color:#B5B5B5">a robot vacuum</span></div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>The role of AI in business functions</h3>
+      <div class="grid g3">
+        <div class="card white"><h4>Marketing and sales</h4><p>Recommends products to each customer, adjusts prices and predicts who is likely to buy or leave.</p></div>
+        <div class="card white"><h4>Customer service</h4><p>Answers routine questions at any hour and directs complex cases to the right employee.</p></div>
+        <div class="card white" style="border:2px solid var(--red)"><h4>Operations and supply chain</h4><p>Forecasts demand, plans stock and production, inspects quality and routes deliveries. <b>The focus of this workshop.</b></p></div>
+        <div class="card white"><h4>Finance</h4><p>Detects unusual transactions, processes invoices automatically and forecasts cash flow.</p></div>
+        <div class="card white"><h4>Human resources</h4><p>Supports recruitment and workforce planning, and tailors training to each employee. Biased data can lead to unfair decisions here.</p></div>
+        <div class="card white"><h4>Product development</h4><p>Analyses customer feedback and generates design options that people then test and refine.</p></div>
+      </div>
+      <div class="band"><b>Three sources of value</b>In every function the value comes from automating routine work, improving decisions, and enabling new offers.</div>
+    </div>
+
+    <div class="sub">
+      <h3>From insight to action</h3>
+      <div class="ladder">
+        <div><b>Describe</b><span>What happened?</span></div>
+        <div><b>Predict</b><span>What will happen?</span></div>
+        <div><b>Prescribe</b><span>What should we do?</span></div>
+        <div><b>Automate</b><span>Do it, with human oversight</span></div>
+      </div>
+      <p class="small muted" style="margin-top:8px">Each step delegates more of the decision to the system.</p>
+      <h4 style="margin-top:20px">When does AI pay off? A three-part test</h4>
+      <div class="grid g3" style="margin-top:10px">
+        <div class="card"><h4>Frequent decisions</h4><p>The same decision is taken thousands of times, such as how much of each item to reorder.</p></div>
+        <div class="card"><h4>Rich data</h4><p>Past decisions and their outcomes are recorded and accessible.</p></div>
+        <div class="card"><h4>Real uncertainty</h4><p>The outcome is hard for a person to foresee, so better prediction has value.</p></div>
+      </div>
+      <div class="note"><b>Use this test on your own ideas.</b> If a decision is rare, undocumented or already easy, AI will add little. Supply chains offer many decisions that pass all three.</div>
+    </div>
+
+    <div class="sub">
+      <h3>AI and competitive advantage</h3>
+      <div class="prose"><p>A competitive advantage lets a company win customers or earn margins that rivals cannot match. AI can contribute to it in two broad ways, mirroring the efficiency and effectiveness distinction from Module 1:</p></div>
+      <div class="grid g2" style="margin-top:14px">
+        <div class="card"><span class="tag" style="margin:0 0 6px">Efficiency · costs, asset management</span><h4>Cost advantage</h4><p>The company serves the same customers with less inventory, waste and labour, and can offer lower prices or earn higher margins.</p></div>
+        <div class="card dark"><span class="tag" style="margin:0 0 6px;color:var(--red-soft)">Effectiveness · reliability, responsiveness, agility</span><h4>Service advantage</h4><p>The company delivers more reliably and faster, and adapts sooner than rivals when conditions change.</p></div>
+      </div>
+      <div class="band"><b>The catch</b>An improvement becomes an advantage only if it supports the company’s strategy and rivals cannot copy it easily. Tools that anyone can buy rarely give lasting advantage; a company’s own data, integrated processes and skilled people do.</div>
+    </div>
+
+    <div class="quiz" data-quiz="m3">
+      <p class="eyebrow">Self-check</p>
+      <h3>Module 3 in three questions</h3>
+      <div class="q" data-answer="1" data-why="Computer vision reading images is the Perceive capability.">
+        <p class="qt">A camera on a production line flags scratched products. Which AI capability is this?</p>
+        <div class="opts"><button>Generate</button><button>Perceive</button><button>Optimise</button></div>
+      </div>
+      <div class="q" data-answer="2" data-why="AI pays off where decisions are frequent, data-rich and uncertain. A once-a-decade decision with little data fails the first two tests.">
+        <p class="qt">Which decision is the weakest candidate for AI?</p>
+        <div class="opts"><button>Daily reorder quantities for 5,000 products</button><button>Predicting late deliveries from carrier data</button><button>Choosing a new headquarters city, once a decade</button></div>
+      </div>
+      <div class="q" data-answer="0" data-why="If rivals can buy the same tool, it raises the industry standard rather than creating an advantage. Own data, integration and skills are harder to copy.">
+        <p class="qt">Why does buying a popular AI tool rarely create lasting competitive advantage?</p>
+        <div class="opts"><button>Rivals can buy the same tool</button><button>AI tools never improve performance</button><button>Regulation forbids AI in supply chains</button></div>
+      </div>
+      <p class="score"></p>
+      <div class="done-row"><input type="checkbox" id="done-m3" data-done="m3"><label for="done-m3">I have completed this module</label></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 4 -->
+<section class="mod alt" id="m4">
+  <div class="wrap">
+    <div class="mod-head">
+      <div class="mod-num">4</div>
+      <p class="eyebrow">Module 4</p>
+      <h2>Using SCOR to Find Where AI Improves Supply Chain Excellence</h2>
+      <p class="lead">Start from the process and the decision, not from the technology. This prevents the common mistake of looking for somewhere to apply AI.</p>
+    </div>
+
+    <div class="card red">
+      <h4 style="font-family:var(--serif);font-size:1.3rem;margin-bottom:12px">For every SCOR process, ask three questions</h4>
+      <ol class="steps" style="margin-top:0">
+        <li style="background:rgba(255,255,255,.14);color:#fff">Which decision is difficult today?</li>
+        <li style="background:rgba(255,255,255,.14);color:#fff">Which AI capability fits that decision?</li>
+        <li style="background:rgba(255,255,255,.14);color:#fff">Which SCOR performance metric will improve?</li>
+      </ol>
+    </div>
+
+    <div class="sub">
+      <h3>Process by process</h3>
+      <div class="tabs" data-tabs>
+        <div class="tablist" role="tablist" aria-label="SCOR processes">
+          <button role="tab" aria-selected="true" aria-controls="t-plan" id="tb-plan">Plan</button>
+          <button role="tab" aria-selected="false" aria-controls="t-source" id="tb-source" tabindex="-1">Source</button>
+          <button role="tab" aria-selected="false" aria-controls="t-make" id="tb-make" tabindex="-1">Make</button>
+          <button role="tab" aria-selected="false" aria-controls="t-deliver" id="tb-deliver" tabindex="-1">Deliver</button>
+          <button role="tab" aria-selected="false" aria-controls="t-return" id="tb-return" tabindex="-1">Return</button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="t-plan" aria-labelledby="tb-plan">
+          <h4 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:12px">Plan: deciding under uncertainty</h4>
+          <div class="grid g3">
+            <div class="card white"><h4>Demand forecasting and sensing</h4><p>Machine learning combines sales history with promotions, weather and local events to forecast for each product and location.</p><span class="tag">Predict</span></div>
+            <div class="card white"><h4>Inventory optimisation</h4><p>Algorithms set safety stock and reorder quantities for each item and site, instead of one rule for everything.</p><span class="tag">Optimise</span></div>
+            <div class="card white"><h4>Scenario planning</h4><p>Simulation and AI assistants let planners test “what if” questions before the sales and operations meeting.</p><span class="tag">Predict · Generate</span></div>
+          </div>
+          <div class="attr"><b>SCOR attributes improved:</b> reliability, costs, asset management. Fewer stock-outs, less excess inventory and a shorter cash-to-cash cycle.</div>
+          <p class="small muted" style="margin-top:10px">Plan is usually where AI delivers value first, because forecasting is frequent, data-rich and uncertain. A better forecast shared along the chain also dampens the bullwhip effect.</p>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="t-source" aria-labelledby="tb-source" hidden>
+          <h4 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:12px">Source: knowing your suppliers</h4>
+          <div class="grid g3">
+            <div class="card white"><h4>Supplier risk monitoring</h4><p>Language models scan news, financial reports and delivery records to give early warning of supplier problems.</p><span class="tag">Perceive · Predict</span></div>
+            <div class="card white"><h4>Spend analytics</h4><p>Machine learning classifies purchasing data to reveal where orders can be consolidated and prices renegotiated.</p><span class="tag">Predict</span></div>
+            <div class="card white"><h4>Tender and contract support</h4><p>Generative AI drafts requests for quotation, compares supplier offers and checks contract clauses.</p><span class="tag">Generate</span></div>
+          </div>
+          <div class="attr"><b>SCOR attributes improved:</b> agility, costs, reliability. Lower value at risk, lower purchasing cost and more dependable inbound supply.</div>
+          <p class="small muted" style="margin-top:10px">Most companies know their direct suppliers but not the suppliers behind them. AI helps monitor more suppliers than a purchasing team could follow manually; the buyer remains accountable for the decision.</p>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="t-make" aria-labelledby="tb-make" hidden>
+          <h4 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:12px">Make: keeping production reliable</h4>
+          <div class="grid g3">
+            <div class="card white"><h4>Predictive maintenance</h4><p>Models trained on sensor data predict when a machine is likely to fail, so it can be serviced before it stops the line.</p><span class="tag">Predict</span></div>
+            <div class="card white"><h4>Visual quality inspection</h4><p>Cameras and computer vision detect defects continuously and consistently on the production line.</p><span class="tag">Perceive</span></div>
+            <div class="card white"><h4>Production scheduling</h4><p>Optimisation algorithms sequence orders across machines and reschedule when conditions change.</p><span class="tag">Optimise</span></div>
+          </div>
+          <div class="attr"><b>SCOR attributes improved:</b> reliability, responsiveness, asset management. Less unplanned downtime, less scrap and rework, and better use of production assets.</div>
+          <p class="small muted" style="margin-top:10px">For retailers or service companies without factories, read Make as the operation that creates the offer, for example preparing fresh food in a supermarket or configuring a product for a customer.</p>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="t-deliver" aria-labelledby="tb-deliver" hidden>
+          <h4 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:12px">Deliver: keeping the promise</h4>
+          <div class="grid g3">
+            <div class="card white"><h4>Order promising and service</h4><p>Models quote delivery dates the company can keep, and AI assistants answer customers’ questions about their orders.</p><span class="tag">Predict · Generate</span></div>
+            <div class="card white"><h4>Warehouse automation</h4><p>Robots and vision systems pick, sort and count goods; machine learning decides where each item is stored.</p><span class="tag">Act · Perceive</span></div>
+            <div class="card white"><h4>Routing and arrival times</h4><p>Algorithms plan delivery routes and predict arrival times from traffic, order and vehicle data.</p><span class="tag">Optimise · Predict</span></div>
+          </div>
+          <div class="attr"><b>SCOR attributes improved:</b> responsiveness, reliability, costs. Shorter order fulfilment cycle time, more perfect orders and a lower cost to serve.</div>
+          <p class="small muted" style="margin-top:10px">Deliver runs from receiving the customer’s order to handing over the product, so it is the process customers experience directly. Which of these have you met as an online shopper?</p>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="t-return" aria-labelledby="tb-return" hidden>
+          <h4 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:12px">Return: the overlooked process</h4>
+          <div class="grid g3">
+            <div class="card white"><h4>Returns forecasting</h4><p>Models estimate which orders are likely to come back, so capacity and stock can be planned.</p><span class="tag">Predict</span></div>
+            <div class="card white"><h4>Automated grading</h4><p>Computer vision assesses the condition of each returned item quickly and consistently.</p><span class="tag">Perceive</span></div>
+            <div class="card white"><h4>Disposition decisions</h4><p>Algorithms choose the best route for each item: back on the shelf, repair, resale elsewhere or recycling.</p><span class="tag">Optimise</span></div>
+          </div>
+          <div class="attr"><b>SCOR attributes improved:</b> costs, asset management, responsiveness. More value recovered from returned goods, less stock tied up in the reverse flow, and faster refunds for customers.</div>
+          <p class="small muted" style="margin-top:10px">Return matters for sustainability and for online retail, where many purchases are sent back. Remember: the empty Coke bottle is a return flow too.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Summary · AI across the SCOR model</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Process</th><th>AI applications</th><th>Capability</th><th>Attributes improved</th></tr></thead>
+        <tbody>
+          <tr><td>Plan</td><td>Demand forecasting, inventory optimisation, scenario planning</td><td>Predict, optimise</td><td>Reliability, costs, assets</td></tr>
+          <tr><td>Source</td><td>Supplier risk monitoring, spend analytics, tender support</td><td>Predict, generate</td><td>Agility, costs</td></tr>
+          <tr><td>Make</td><td>Predictive maintenance, visual inspection, scheduling</td><td>Predict, perceive, optimise</td><td>Reliability, assets</td></tr>
+          <tr><td>Deliver</td><td>Order promising, warehouse automation, routing</td><td>Predict, act, optimise</td><td>Responsiveness, costs</td></tr>
+          <tr><td>Return</td><td>Returns forecasting, automated grading, disposition</td><td>Predict, perceive, optimise</td><td>Costs, assets</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small muted" style="margin-top:10px">These are examples, not a complete list. Your case company may offer better ones; the strongest presentations propose an application specific to their company.</p>
+    </div>
+
+    <div class="sub">
+      <h3>From AI use case to competitive advantage</h3>
+      <div class="flow">
+        <div><b>AI application</b><span>in one SCOR process</span></div><i>→</i>
+        <div><b>Better decisions</b><span>faster, more accurate</span></div><i>→</i>
+        <div><b>Better SCOR metrics</b><span>efficiency or effectiveness</span></div><i>→</i>
+        <div><b>Competitive advantage</b><span>lower cost or better service</span></div>
+      </div>
+      <div class="note"><b>The argument your group must make:</b> not “AI is useful here”, but “this application improves <i>this</i> metric, which matters for <i>this</i> company’s strategy”.</div>
+    </div>
+
+    <div class="sub">
+      <h3>A critical view · what must be in place first</h3>
+      <div class="grid g4">
+        <div class="card"><h4>Data quality</h4><p>Models learn from historical data. Incomplete or inconsistent records produce unreliable recommendations.</p></div>
+        <div class="card"><h4>Process integration</h4><p>A forecast creates value only when purchasing, production and logistics act on it.</p></div>
+        <div class="card"><h4>People and trust</h4><p>Planners need the skills to question a recommendation, and the authority to overrule it.</p></div>
+        <div class="card"><h4>Responsible use</h4><p>Privacy, bias, transparency and regulation such as the EU AI Act set limits on what may be automated.</p></div>
+      </div>
+      <div class="band"><b>For your presentation</b>Name at least one risk or precondition for the AI application you recommend. A proposal without limits is not credible. (Later SCOR versions group these conditions under a separate Enable process.)</div>
+    </div>
+
+    <div class="quiz" data-quiz="m4">
+      <p class="eyebrow">Self-check</p>
+      <h3>Module 4 in three questions</h3>
+      <div class="q" data-answer="0" data-why="The method starts from the process and the difficult decision; the technology comes second.">
+        <p class="qt">What is the first question to ask for each SCOR process?</p>
+        <div class="opts"><button>Which decision is difficult today?</button><button>Which AI tool is the most advanced?</button><button>How much will the AI system cost?</button></div>
+      </div>
+      <div class="q" data-answer="2" data-why="Predictive maintenance keeps machines running in production: Make. It improves reliability and asset management.">
+        <p class="qt">Predictive maintenance on a bottling line belongs mainly to which process?</p>
+        <div class="opts"><button>Plan</button><button>Deliver</button><button>Make</button></div>
+      </div>
+      <div class="q" data-answer="1" data-why="It names the application, the SCOR metric and the strategic link, and it states a precondition.">
+        <p class="qt">Which statement is the strongest argument in a presentation?</p>
+        <div class="opts"><button>“AI is the future, so the company should use it everywhere.”</button><button>“Store-level demand forecasting would reduce stock-outs (perfect order fulfilment), which supports this retailer’s service strategy, provided its sales data are clean.”</button><button>“A chatbot would be nice for customers.”</button></div>
+      </div>
+      <p class="score"></p>
+      <div class="done-row"><input type="checkbox" id="done-m4" data-done="m4"><label for="done-m4">I have completed this module</label></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 5 -->
+<section class="mod" id="m5">
+  <div class="wrap">
+    <div class="mod-head">
+      <div class="mod-num">5</div>
+      <p class="eyebrow">Module 5 · Group work</p>
+      <h2>The Workshop</h2>
+      <p class="lead">Choose a company. Map its supply chain with SCOR. Show where AI makes it more competitive. 30 minutes of group work in groups of about four, followed by 60 minutes of group presentations.</p>
+    </div>
+
+    <div class="sub" style="margin-top:0">
+      <h3>Your task in 30 minutes</h3>
+      <div class="grid g4">
+        <div class="card"><div class="big">5 min</div><h4>Choose and sketch</h4><p>Pick one company from the shortlist. Sketch its supply chain from suppliers to customers.</p></div>
+        <div class="card"><div class="big">10 min</div><h4>Map with SCOR</h4><p>For each of the five processes, note what the company does and one challenge it faces.</p></div>
+        <div class="card"><div class="big">10 min</div><h4>Find AI opportunities</h4><p>Propose an AI application for each challenge. Name the capability and the SCOR metric it improves.</p></div>
+        <div class="card"><div class="big">5 min</div><h4>Prioritise and prepare</h4><p>Select your top three ideas and the one to start with. Decide who presents.</p></div>
+      </div>
+      <div class="band"><b>What you hand in</b>One completed SCOR canvas and a seven-minute presentation. You may search online and use AI assistants, but check what they tell you.</div>
+    </div>
+
+    <div class="sub">
+      <h3>Choose one company</h3>
+      <div class="grid g3">
+        <div class="card white"><h4>IKEA</h4><p>Home furnishing retailer. Flat-pack products, a global supplier base, large stores and online sales.</p></div>
+        <div class="card white"><h4>H&amp;M Group</h4><p>Swedish fashion retailer. Production is outsourced to independent suppliers; sells in stores and online. Compare it with Zara.</p></div>
+        <div class="card white"><h4>Colruyt Group</h4><p>Belgian grocery retailer. Competes on low prices and handles large volumes of fresh products.</p></div>
+        <div class="card white"><h4>AB InBev</h4><p>Brewer headquartered in Leuven. Agricultural inputs, large-scale brewing, delivery to shops and cafés.</p></div>
+        <div class="card white"><h4>Decathlon</h4><p>Sporting goods retailer. Designs its own brands, sources globally, sells in stores and online.</p></div>
+        <div class="card white"><h4>Barco</h4><p>Technology company based in Kortrijk. High-value visualisation products for business customers.</p></div>
+      </div>
+      <p class="small muted" style="margin-top:10px">The shortlist mixes efficient and responsive supply chains, consumer and business markets, and Belgian and international firms. If two groups choose the same company, compare conclusions in the discussion.</p>
+    </div>
+
+    <div class="sub">
+      <h3>Your SCOR canvas</h3>
+      <p class="prose">Fill in the canvas below. It is saved in this browser as you type. Aim for at least one idea per process, then mark your top three. The first row is an example from a fictional bakery chain.</p>
+      <div class="canvas-tools">
+        <div><label for="cv-company">Company</label>
+          <select id="cv-company"><option value="">Select…</option><option>IKEA</option><option>H&amp;M Group</option><option>Colruyt Group</option><option>AB InBev</option><option>Decathlon</option><option>Barco</option><option>Other</option></select></div>
+        <div><label for="cv-group">Group members</label><input id="cv-group" placeholder="Names"></div>
+        <div><label for="cv-strategy">Competitive strategy</label>
+          <select id="cv-strategy"><option value="">Select…</option><option>Cost (efficiency)</option><option>Service (effectiveness)</option><option>Deliberate balance of both</option></select></div>
+      </div>
+      <div class="tbl-wrap cv"><table>
+        <thead><tr><th>SCOR process</th><th>Current challenge</th><th>AI application</th><th>Capability</th><th>Metric improved</th><th>Top 3</th></tr></thead>
+        <tbody id="cv-body">
+          <tr class="example"><td>Plan (example)</td><td>Unsold bread at closing time; empty shelves on busy days</td><td>Daily demand forecast per shop from sales, weather and holidays</td><td>Predict</td><td>Perfect order fulfilment; total cost to serve</td><td class="top3">—</td></tr>
+        </tbody>
+      </table></div>
+      <div class="cv-actions">
+        <button class="btn" id="cv-copy" type="button">Copy canvas as text</button>
+        <button class="btn line" id="cv-print" type="button">Print / save as PDF</button>
+        <button class="btn line" id="cv-clear" type="button">Clear canvas</button>
+        <span class="toast" id="cv-toast" role="status"></span>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>How you will present</h3>
+      <div class="grid g2">
+        <div class="card dark"><div class="big">7 + 3 min</div><h4>Time per group</h4><p>Seven minutes to present, then three minutes of questions from the other groups. The session closes with a ten-minute joint discussion of what the groups found.</p></div>
+        <div class="card">
+          <h4>Structure of your presentation</h4>
+          <ol class="steps">
+            <li>The company and its competitive strategy: cost, service or both</li>
+            <li>Its supply chain, described with the five SCOR processes</li>
+            <li>Your top three AI applications, with capability and metric</li>
+            <li>The one to implement first, and why</li>
+            <li>One risk or precondition the company must manage</li>
+          </ol>
+        </div>
+      </div>
+      <div class="note"><b>Every member of the group should speak.</b> Visual aids are optional; the completed canvas is sufficient.</div>
+    </div>
+
+    <div class="sub">
+      <h3>What a strong presentation shows</h3>
+      <div class="grid g4">
+        <div class="card white"><div class="big">1</div><h4>Understanding</h4><p>The supply chain is described accurately, from suppliers to customers.</p></div>
+        <div class="card white"><div class="big">2</div><h4>Use of SCOR</h4><p>Activities and challenges are assigned to the correct processes and metrics.</p></div>
+        <div class="card white"><div class="big">3</div><h4>Quality of ideas</h4><p>The AI applications fit a real decision and are feasible for this company.</p></div>
+        <div class="card white"><div class="big">4</div><h4>Strategic link</h4><p>The proposal explains how the improvement supports competitive advantage.</p></div>
+      </div>
+      <div class="band"><b>While other groups present</b>Prepare one question for them using these four criteria.</div>
+    </div>
+
+    <div class="sub">
+      <h3>Three points to take home</h3>
+      <div class="grid g3">
+        <div class="card red"><div class="big" style="color:#fff">1</div><p style="font-size:1rem">Competitive advantage is built across the supply chain, not inside a single company.</p></div>
+        <div class="card red"><div class="big" style="color:#fff">2</div><p style="font-size:1rem">SCOR offers a shared map and shared metrics for finding where to improve.</p></div>
+        <div class="card red"><div class="big" style="color:#fff">3</div><p style="font-size:1rem">AI creates advantage when it is tied to a decision, a metric and the capability to act on it.</p></div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Further reading</h3>
+      <ul class="refs">
+        <li>APICS (2017). <i>Supply Chain Operations Reference Model (SCOR), Version 12.0</i>. Chicago: APICS.</li>
+        <li>Association for Supply Chain Management. <i>SCOR Digital Standard</i> (current version). <a href="https://scor.ascm.org" target="_blank" rel="noopener">scor.ascm.org</a></li>
+        <li>Chopra, S., &amp; Meindl, P. <i>Supply Chain Management: Strategy, Planning, and Operation</i>. Pearson.</li>
+        <li>Christopher, M. <i>Logistics &amp; Supply Chain Management</i>. Pearson.</li>
+        <li>Fisher, M. L. (1997). What is the right supply chain for your product? <i>Harvard Business Review</i>, 75(2), 105–116.</li>
+        <li>Inditex. Annual reports and group profile. <a href="https://www.inditex.com" target="_blank" rel="noopener">inditex.com</a></li>
+        <li>Lee, H. L., Padmanabhan, V., &amp; Whang, S. (1997). The bullwhip effect in supply chains. <i>Sloan Management Review</i>, 38(3), 93–102.</li>
+      </ul>
+      <p class="small muted" style="margin-top:8px">Textbooks are listed without edition; use the most recent one in your library.</p>
+    </div>
+
+    <div class="done-row" style="margin-top:30px"><input type="checkbox" id="done-m5" data-done="m5"><label for="done-m5" style="color:var(--ink)">I have completed this module</label></div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>AI for Supply Chain Excellence · Vives International Staff Week 2026 · Kortrijk</span>
+    <span>© <span id="y">2026</span> Imam Baihaqi · <a href="https://bhq2506.github.io/learning/me/" target="_blank" rel="noopener">bhq2506.github.io/learning/me</a> · Vibe coded with <a href="https://claude.ai" target="_blank" rel="noopener">Claude.ai</a></span>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+
+<script>
+(function () {
+  // Safe storage helpers
+  var KEY = 'vives2026-';
+  function get(k) { try { return localStorage.getItem(KEY + k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(KEY + k, v); } catch (e) {} }
+  function del(k) { try { localStorage.removeItem(KEY + k); } catch (e) {} }
+
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Scroll progress, active nav, back to top
+  var bar = document.getElementById('progress'), totop = document.getElementById('totop');
+  var navLinks = [].slice.call(document.querySelectorAll('.nav a'));
+  var sections = navLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function onScroll() {
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    totop.classList.toggle('show', h.scrollTop > 600);
+    var cur = -1;
+    sections.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < 120) cur = i; });
+    navLinks.forEach(function (a, i) { a.classList.toggle('active', i === cur); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  totop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  // Bullwhip illustration
+  var bw = document.getElementById('bw'), bwv = document.getElementById('bwv');
+  function drawBw() {
+    var p = +bw.value; bwv.textContent = p;
+    var vals = [p, p * 1.6, p * 1.6 * 1.6, p * 1.6 * 1.6 * 1.6];
+    var max = 30 * 4.096;
+    vals.forEach(function (v, i) {
+      document.getElementById('b' + i).textContent = '+' + Math.round(v) + '%';
+      document.getElementById('h' + i).style.height = Math.max(3, (v / max) * 160) + 'px';
+    });
+  }
+  bw.addEventListener('input', drawBw); drawBw();
+
+  // Tabs
+  [].forEach.call(document.querySelectorAll('[data-tabs]'), function (root) {
+    var tabs = [].slice.call(root.querySelectorAll('[role=tab]'));
+    function select(t) {
+      tabs.forEach(function (x) {
+        var on = x === t;
+        x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1;
+        document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        var j = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : null;
+        if (j === null) return;
+        var n = tabs[(j + tabs.length) % tabs.length]; select(n); n.focus();
+      });
+    });
+  });
+
+  // Quizzes
+  [].forEach.call(document.querySelectorAll('.quiz'), function (quiz) {
+    var qs = [].slice.call(quiz.querySelectorAll('.q')), score = quiz.querySelector('.score'), right = 0, answered = 0;
+    qs.forEach(function (q) {
+      var ans = +q.dataset.answer, btns = [].slice.call(q.querySelectorAll('button'));
+      btns.forEach(function (b, i) {
+        b.addEventListener('click', function () {
+          btns.forEach(function (x, j) { x.disabled = true; if (j === ans) x.classList.add('right'); });
+          if (i !== ans) b.classList.add('wrong'); else right++;
+          answered++;
+          var fb = document.createElement('p'); fb.className = 'fb';
+          fb.innerHTML = '<b>' + (i === ans ? 'Correct.' : 'Not quite.') + '</b> ' + q.dataset.why;
+          q.appendChild(fb);
+          if (answered === qs.length) score.textContent = 'You scored ' + right + ' out of ' + qs.length + '.' + (right < qs.length ? ' Review the module sections above, then move on.' : ' Well done: move on to the next module.');
+        });
+      });
+    });
+  });
+
+  // Module completion
+  function refreshCards() {
+    [].forEach.call(document.querySelectorAll('#modcards a'), function (a) {
+      a.classList.toggle('is-done', get('done-' + a.dataset.mod) === '1');
+    });
+  }
+  [].forEach.call(document.querySelectorAll('[data-done]'), function (cb) {
+    cb.checked = get('done-' + cb.dataset.done) === '1';
+    cb.addEventListener('change', function () { set('done-' + cb.dataset.done, cb.checked ? '1' : '0'); refreshCards(); });
+  });
+  refreshCards();
+
+  // Canvas
+  var PROC = ['Plan', 'Source', 'Make', 'Deliver', 'Return'];
+  var CAPS = ['', 'Predict', 'Perceive', 'Optimise', 'Generate', 'Act', 'Predict + Optimise', 'Perceive + Predict', 'Other / combination'];
+  var METRICS = ['', 'Perfect order fulfilment (reliability)', 'Order fulfilment cycle time (responsiveness)', 'Adaptability / value at risk (agility)', 'Total cost to serve (costs)', 'Cash-to-cash cycle time (assets)', 'Return on fixed assets (assets)'];
+  var body = document.getElementById('cv-body');
+  function opt(list) { return list.map(function (o) { return '<option>' + o + '</option>'; }).join(''); }
+  PROC.forEach(function (p) {
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>' + p + '</td>' +
+      '<td><textarea data-k="' + p + '-ch" aria-label="' + p + ' challenge"></textarea></td>' +
+      '<td><textarea data-k="' + p + '-ai" aria-label="' + p + ' AI application"></textarea></td>' +
+      '<td><select data-k="' + p + '-cap" aria-label="' + p + ' capability">' + opt(CAPS) + '</select></td>' +
+      '<td><select data-k="' + p + '-met" aria-label="' + p + ' metric">' + opt(METRICS) + '</select></td>' +
+      '<td class="top3"><input type="checkbox" data-k="' + p + '-top" aria-label="' + p + ' in top three"></td>';
+    body.appendChild(tr);
+  });
+  var fields = [].slice.call(document.querySelectorAll('[data-k], #cv-company, #cv-group, #cv-strategy'));
+  function key(el) { return 'cv-' + (el.dataset.k || el.id); }
+  fields.forEach(function (el) {
+    var v = get(key(el));
+    if (v !== null) { if (el.type === 'checkbox') el.checked = v === '1'; else el.value = v; }
+    el.addEventListener('input', function () { set(key(el), el.type === 'checkbox' ? (el.checked ? '1' : '0') : el.value); });
+    el.addEventListener('change', function () { set(key(el), el.type === 'checkbox' ? (el.checked ? '1' : '0') : el.value); });
+  });
+  var toast = document.getElementById('cv-toast');
+  function say(t) { toast.textContent = t; setTimeout(function () { toast.textContent = ''; }, 2500); }
+  function val(k) { var el = document.querySelector('[data-k="' + k + '"]'); return el.type === 'checkbox' ? el.checked : el.value.trim(); }
+  document.getElementById('cv-copy').addEventListener('click', function () {
+    var out = ['SCOR CANVAS · AI for Supply Chain Excellence (Vives 2026)',
+      'Company: ' + (document.getElementById('cv-company').value || '-'),
+      'Group: ' + (document.getElementById('cv-group').value || '-'),
+      'Strategy: ' + (document.getElementById('cv-strategy').value || '-'), ''];
+    PROC.forEach(function (p) {
+      out.push(p.toUpperCase() + (val(p + '-top') ? '  [TOP 3]' : ''));
+      out.push('  Challenge: ' + (val(p + '-ch') || '-'));
+      out.push('  AI application: ' + (val(p + '-ai') || '-'));
+      out.push('  Capability: ' + (val(p + '-cap') || '-'));
+      out.push('  Metric: ' + (val(p + '-met') || '-'), '');
+    });
+    var text = out.join('\n');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { say('Copied to clipboard.'); }, function () { fallback(text); });
+    } else fallback(text);
+  });
+  function fallback(text) {
+    var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); say('Copied to clipboard.'); } catch (e) { say('Copy failed: select and copy manually.'); }
+    document.body.removeChild(ta);
+  }
+  document.getElementById('cv-print').addEventListener('click', function () { window.print(); });
+  document.getElementById('cv-clear').addEventListener('click', function () {
+    fields.forEach(function (el) { if (el.type === 'checkbox') el.checked = false; else el.value = ''; del(key(el)); });
+    say('Canvas cleared.');
+  });
+})();
+</script>
+</body>
+</html>
