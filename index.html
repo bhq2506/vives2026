@@ -316,6 +316,19 @@
   .ig-chips span { background: #fff; border: 1px solid var(--border); border-radius: 999px; padding: 4px 11px; font-size: .8rem; font-weight: 600; color: var(--ink); }
   .ig-src { font-size: .72rem; color: var(--muted); }
 
+
+  /* ITS infographic */
+  .ig-tl { list-style: none; position: relative; display: grid; gap: 12px; padding-left: 26px; }
+  .ig-tl::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--red); }
+  .ig-tl li { position: relative; font-size: .86rem; line-height: 1.45; }
+  .ig-tl li::before { content: ""; position: absolute; left: -24px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 3px solid var(--red); }
+  .ig-tl b { color: var(--ink); font-family: var(--serif); margin-right: 6px; }
+  .ig > .ig-trio div { background: var(--stone); }
+  .ig-video { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: var(--ink); }
+  .ig-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .ig-hl { background: var(--ink); color: #fff; border-radius: 10px; padding: 14px 16px; font-size: .9rem; }
+  .ig-hl b { color: var(--red-soft); }
+
   @media print {
     .topbar, .hero .cta, .totop, .quiz, .cv-actions, .canvas-tools .btn, footer.site { display: none !important; }
     section.mod { padding: 24px 0; break-inside: avoid-page; }
@@ -501,10 +514,51 @@
               <span class="txt">About ITS<small>Institut Teknologi Sepuluh Nopember, Surabaya</small></span>
               <span class="chev" aria-hidden="true">›</span>
             </summary>
-            <div class="body">
-              <p><a href="https://www.its.ac.id/en/" target="_blank" rel="noopener">Institut Teknologi Sepuluh Nopember (ITS)</a> is one of Indonesia’s leading science and technology universities, located in Surabaya, East Java, the country’s second-largest city. It was founded on 10 November 1957 and inaugurated by President Soekarno. Its name, “Sepuluh Nopember” (10 November), honours the Battle of Surabaya on 10 November 1945, a defining moment in Indonesia’s struggle for independence, commemorated nationally as Heroes’ Day.</p>
-              <p>Today ITS is a state university with legal-entity status (PTNBH), with 8 faculties and 1 school, 38 departments and 107 study programmes. Around 1,180 lecturers teach close to 30,000 active students. Its strengths lie in engineering, maritime technology, information technology, science, design and business.</p>
-              <p>I teach in the Department of Business Management, where operations and supply chain management is one of our core fields.</p>
+            <div class="body ig-body">
+              <div class="ig">
+                <div class="ig-stats">
+                  <div class="ig-stat"><b>1957</b><span>founded in Surabaya, East Java</span></div>
+                  <div class="ig-stat"><b>8 + 1</b><span>faculties and school</span></div>
+                  <div class="ig-stat"><b>38</b><span>departments</span></div>
+                  <div class="ig-stat"><b>107</b><span>study programmes</span></div>
+                </div>
+                <div class="ig-trio">
+                  <div><b>~30,000</b><span>active students</span></div>
+                  <div><b>1,180</b><span>lecturers</span></div>
+                  <div><b>PTNBH</b><span>state university with legal-entity status</span></div>
+                </div>
+
+                <div class="ig-panel">
+                  <h5>Watch · ITS profile video (4:43)</h5>
+                  <div class="ig-video">
+                    <iframe src="https://www.youtube-nocookie.com/embed/dG_gEYUfEjI" title="Institut Teknologi Sepuluh Nopember - Profile Video 2025" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <p class="ig-src" style="margin-top:6px">Can’t see the video? <a href="https://www.youtube.com/watch?v=dG_gEYUfEjI" target="_blank" rel="noopener">Watch it on YouTube</a>.</p>
+                </div>
+
+                <div class="ig-panel">
+                  <h5>Why “Sepuluh Nopember”?</h5>
+                  <p class="small">The name means “10 November”. It honours the Battle of Surabaya on 10 November 1945, a defining moment in Indonesia’s struggle for independence, commemorated every year as Heroes’ Day. Surabaya is still known as the City of Heroes.</p>
+                </div>
+
+                <div class="ig-panel">
+                  <h5>Milestones</h5>
+                  <ul class="ig-tl">
+                    <li><b>1945</b>Battle of Surabaya, 10 November</li>
+                    <li><b>1957</b>Founded as a technical college on 10 November, inaugurated by President Soekarno</li>
+                    <li><b>1960</b>Becomes a state institute: Institut Teknologi Sepuluh Nopember</li>
+                    <li><b>1982</b>Main campus at Sukolilo, Surabaya, inaugurated</li>
+                    <li><b>2017</b>Reorganised as a PTNBH legal-entity university, with an expanded faculty structure</li>
+                  </ul>
+                </div>
+
+                <div class="ig-panel">
+                  <h5>Where ITS is strong</h5>
+                  <div class="ig-chips"><span>Engineering</span><span>Maritime technology</span><span>Information &amp; communication technology</span><span>Science</span><span>Design &amp; planning</span><span>Business &amp; management</span></div>
+                </div>
+
+                <div class="ig-hl"><b>My home at ITS:</b> the Department of Business Management, where operations and supply chain management is one of our core fields. Visit <a href="https://www.its.ac.id/en/" target="_blank" rel="noopener" style="color:#fff">its.ac.id</a>.</div>
+              </div>
             </div>
           </details>
         </li>
