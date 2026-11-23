@@ -329,6 +329,23 @@
   .ig-hl { background: var(--ink); color: #fff; border-radius: 10px; padding: 14px 16px; font-size: .9rem; }
   .ig-hl b { color: var(--red-soft); }
 
+
+  /* Thumbnail cards */
+  .ig-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .ig-card { background: #fff; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+  .ig-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: var(--stone-2); }
+  .ig-card div { padding: 8px 10px 10px; }
+  .ig-card b { display: block; color: var(--ink); font-size: .88rem; line-height: 1.25; }
+  .ig-card em { display: block; font-style: normal; font-size: .68rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--red); margin: 2px 0 4px; }
+  .ig-card span { display: block; font-size: .76rem; line-height: 1.4; color: var(--text); }
+  .ig-infl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+  .ig-infl div { background: var(--ink); color: #DADADA; border-radius: 8px; padding: 10px 12px; font-size: .78rem; line-height: 1.4; }
+  .ig-infl b { display: block; color: var(--red-soft); font-size: .85rem; margin-bottom: 2px; }
+  @media (max-width: 560px) { .ig-infl { grid-template-columns: 1fr; } }
+  details.credits { margin-top: 4px; }
+  details.credits summary { cursor: pointer; font-size: .72rem; color: var(--muted); }
+  details.credits p { font-size: .7rem; color: var(--muted); line-height: 1.5; margin-top: 4px; }
+
   @media print {
     .topbar, .hero .cta, .totop, .quiz, .cv-actions, .canvas-tools .btn, footer.site { display: none !important; }
     section.mod { padding: 24px 0; break-inside: avoid-page; }
@@ -519,6 +536,46 @@
                     <div><b>700+</b><span>local languages</span></div>
                     <div><b>1</b><span>national language: Bahasa Indonesia</span></div>
                   </div>
+                </div>
+
+                <div class="ig-panel">
+                  <h5>Food &amp; culinary · every region has its own cuisine</h5>
+                  <div class="ig-cards">
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rendang_daging_sapi_asli_Padang.JPG?width=320" alt="Rendang" loading="lazy" width="320" height="240"><div><b>Rendang</b><em>West Sumatra</em><span>Beef slow-cooked for hours in coconut milk and spices until almost dry. Often ranked among the world’s best dishes.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Soto_Ayam_Savoy_Homann_Hotel.JPG?width=320" alt="Soto" loading="lazy" width="320" height="240"><div><b>Soto</b><em>Across Indonesia</em><span>Spiced soup with dozens of regional versions, from Soto Lamongan in East Java to Soto Betawi in Jakarta.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sate_Udang.JPG?width=320" alt="Sate (satay)" loading="lazy" width="320" height="240"><div><b>Sate (satay)</b><em>Java &amp; Madura</em><span>Grilled skewers of meat or seafood, usually served with peanut or sweet soy sauce.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Goreng_Kampung_%2811967588375%29.jpg?width=320" alt="Nasi goreng" loading="lazy" width="320" height="240"><div><b>Nasi goreng</b><em>Nationwide</em><span>Fried rice with sweet soy sauce (kecap manis), often topped with a fried egg.</span></div></div>
+                  </div>
+                  <p class="small" style="margin-top:12px"><b>A cuisine shaped by trade.</b> For centuries the spices of the Maluku Islands (cloves, nutmeg, pepper) drew traders to Indonesia, and they brought their own cooking with them:</p>
+                  <div class="ig-infl">
+                    <div><b>India</b>Curries such as gulai and kari, flatbreads like roti and martabak, and the rich use of spices.</div>
+                    <div><b>Arab world</b>Spiced rice such as nasi kebuli, goat and lamb dishes, and coffee traditions, arriving with Muslim traders.</div>
+                    <div><b>China</b>Noodles (bakmi), tofu, soy sauce, meatballs (bakso) and the wok, as in nasi goreng.</div>
+                  </div>
+                  <p class="ig-src" style="margin-top:8px">The spice trade was one of the world’s first global supply chains.</p>
+                </div>
+
+                <div class="ig-panel">
+                  <h5>Traditional dances</h5>
+                  <div class="ig-cards">
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Saman_dance.jpg?width=320" alt="Saman" loading="lazy" width="320" height="240"><div><b>Saman</b><em>Aceh</em><span>The “dance of a thousand hands”: rows of seated dancers clap and move in rapid unison. UNESCO intangible heritage.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kecak_dancers_cliffside_Uluwatu.jpg?width=320" alt="Kecak" loading="lazy" width="320" height="240"><div><b>Kecak</b><em>Bali</em><span>A circle of men chanting “cak” tells a story from the Ramayana, often at sunset.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Reog_tanpa_mistis.jpg?width=320" alt="Reog Ponorogo" loading="lazy" width="320" height="240"><div><b>Reog Ponorogo</b><em>East Java</em><span>A lead dancer carries a huge tiger-and-peacock mask, held up largely with the teeth.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Seni_Tari_Piring.jpg?width=320" alt="Tari Piring" loading="lazy" width="320" height="240"><div><b>Tari Piring</b><em>West Sumatra</em><span>The plate dance: dancers swing plates in their palms without dropping them.</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ig-panel">
+                  <h5>Best places to visit</h5>
+                  <div class="ig-cards">
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pradaksina.jpg?width=320" alt="Borobudur" loading="lazy" width="320" height="240"><div><b>Borobudur</b><em>Central Java</em><span>9th-century temple and the world’s largest Buddhist monument. UNESCO World Heritage.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bromo-Semeru-Batok-Widodaren.jpg?width=320" alt="Mount Bromo" loading="lazy" width="320" height="240"><div><b>Mount Bromo</b><em>East Java</em><span>An active volcano rising from a sea of sand, famous at sunrise. A few hours’ drive from Surabaya.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Unique%20Karst%20Islands%20Wayag%20%2869211403%29.jpeg?width=320" alt="Raja Ampat" loading="lazy" width="320" height="240"><div><b>Raja Ampat</b><em>Papua</em><span>Hundreds of karst islands and some of the richest coral reefs on Earth: a diver’s paradise.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Komodo_dragon_at_Komodo_National_Park.jpg?width=320" alt="Komodo National Park" loading="lazy" width="320" height="240"><div><b>Komodo National Park</b><em>East Nusa Tenggara</em><span>Home of the Komodo dragon, the world’s largest lizard. UNESCO World Heritage.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/TanahLot_2014.JPG?width=320" alt="Bali · Tanah Lot" loading="lazy" width="320" height="240"><div><b>Bali · Tanah Lot</b><em>Bali</em><span>A Hindu sea temple on a rock in the waves, on an island known for its temples, rice terraces and arts.</span></div></div>
+                    <div class="ig-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Toba_and_the_surrounding_hills.jpg?width=320" alt="Lake Toba" loading="lazy" width="320" height="240"><div><b>Lake Toba</b><em>North Sumatra</em><span>The largest volcanic lake in the world, formed by a super-eruption about 74,000 years ago.</span></div></div>
+                  </div>
+                  <details class="credits"><summary>Photo credits (Wikimedia Commons)</summary><p>Rendang: <a href="https://commons.wikimedia.org/wiki/File:Rendang_daging_sapi_asli_Padang.JPG" target="_blank" rel="noopener">Midori</a>, CC BY 3.0; Soto: <a href="https://commons.wikimedia.org/wiki/File:Soto_Ayam_Savoy_Homann_Hotel.JPG" target="_blank" rel="noopener">Gunawan Kartapranata</a>, CC BY-SA 3.0; Sate (satay): <a href="https://commons.wikimedia.org/wiki/File:Sate_Udang.JPG" target="_blank" rel="noopener">Gunawan Kartapranata</a>, CC BY-SA 4.0; Nasi goreng: <a href="https://commons.wikimedia.org/wiki/File:Nasi_Goreng_Kampung_%2811967588375%29.jpg" target="_blank" rel="noopener">shankar s.</a>, CC BY 2.0; Saman: <a href="https://commons.wikimedia.org/wiki/File:Saman_dance.jpg" target="_blank" rel="noopener">Fajriboy</a>, CC BY-SA 3.0; Kecak: <a href="https://commons.wikimedia.org/wiki/File:Kecak_dancers_cliffside_Uluwatu.jpg" target="_blank" rel="noopener">Rollan Budi</a>, CC BY-SA 2.0; Reog Ponorogo: <a href="https://commons.wikimedia.org/wiki/File:Reog_tanpa_mistis.jpg" target="_blank" rel="noopener">Sudibyo Saputro</a>, CC BY-SA 4.0; Tari Piring: <a href="https://commons.wikimedia.org/wiki/File:Seni_Tari_Piring.jpg" target="_blank" rel="noopener">Government of Jakarta</a>, Public domain; Borobudur: <a href="https://commons.wikimedia.org/wiki/File:Pradaksina.jpg" target="_blank" rel="noopener">Heri nugroho</a>, CC BY-SA 4.0; Mount Bromo: <a href="https://commons.wikimedia.org/wiki/File:Bromo-Semeru-Batok-Widodaren.jpg" target="_blank" rel="noopener">Riza Nugraha</a>, CC BY 2.0; Raja Ampat: <a href="https://commons.wikimedia.org/wiki/File:Unique%20Karst%20Islands%20Wayag%20%2869211403%29.jpeg" target="_blank" rel="noopener">Tjetjep Rustandi</a>, CC BY 3.0; Komodo National Park: <a href="https://commons.wikimedia.org/wiki/File:Komodo_dragon_at_Komodo_National_Park.jpg" target="_blank" rel="noopener">Adhi Rachdian</a>, CC BY 2.0; Bali · Tanah Lot: <a href="https://commons.wikimedia.org/wiki/File:TanahLot_2014.JPG" target="_blank" rel="noopener">Grayswoodsurrey</a>, CC BY-SA 4.0; Lake Toba: <a href="https://commons.wikimedia.org/wiki/File:Lake_Toba_and_the_surrounding_hills.jpg" target="_blank" rel="noopener">Bisajunisa</a>, CC BY-SA 4.0.</p></details>
                 </div>
 
                 <div class="ig-panel">
