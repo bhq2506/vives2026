@@ -346,6 +346,15 @@
   details.credits summary { cursor: pointer; font-size: .72rem; color: var(--muted); }
   details.credits p { font-size: .7rem; color: var(--muted); line-height: 1.5; margin-top: 4px; }
 
+
+  /* Partner logos */
+  .logos { margin-top: 26px; display: inline-flex; align-items: center; gap: 22px; background: #fff; border-radius: 12px; padding: 12px 20px; }
+  .logos a { display: block; line-height: 0; }
+  .logo-vives { position: relative; display: block; width: 116px; height: 42px; overflow: hidden; }
+  .logo-vives img { position: absolute; width: 140px; height: 140px; left: -12px; top: -49px; max-width: none; }
+  .logo-its { height: 48px; width: auto; display: block; }
+  .logos .sep { width: 1px; height: 36px; background: var(--border); }
+
   @media print {
     .topbar, .hero .cta, .totop, .quiz, .cv-actions, .canvas-tools .btn, footer.site { display: none !important; }
     section.mod { padding: 24px 0; break-inside: avoid-page; }
@@ -358,7 +367,7 @@
 
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="#top"><span class="dot"></span>Vives 2026</a>
+    <a class="brand" href="#top"><span class="dot"></span>VIVES ISW 2026</a>
     <nav class="nav" aria-label="Sections">
       <a href="#lecturer">Lecturer</a>
       <a href="#overview">Overview</a>
@@ -387,6 +396,11 @@
     <div class="cta">
       <a class="btn" href="#m1">Start studying</a>
       <a class="btn ghost" href="#m5">Go to the workshop task</a>
+    </div>
+    <div class="logos" aria-label="Partner institutions">
+      <a href="https://www.vives.be/en" target="_blank" rel="noopener" title="VIVES University of Applied Sciences"><span class="logo-vives"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20-%20Hogeschool%20VIVES.png?width=500" alt="VIVES University of Applied Sciences"></span></a>
+      <span class="sep" aria-hidden="true"></span>
+      <a href="https://www.its.ac.id/en/" target="_blank" rel="noopener" title="Institut Teknologi Sepuluh Nopember"><img class="logo-its" src="https://en.wikipedia.org/wiki/Special:FilePath/Sepuluh_Nopember_Institute_of_Technology_Logo_With_Wordmark.svg?width=400" alt="Institut Teknologi Sepuluh Nopember (ITS)"></a>
     </div>
   </div>
 </div>
