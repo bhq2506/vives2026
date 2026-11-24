@@ -355,6 +355,14 @@
   .logo-its { height: 64px; width: auto; display: block; }
   .logos .sep { width: 1px; height: 36px; background: var(--border); }
 
+
+  .hero-foot { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: stretch; gap: 14px; }
+  .hero-foot .logos { margin-top: 0; }
+  .slides-link { display: inline-flex; align-items: center; gap: 12px; padding: 12px 20px; border-radius: 12px; background: var(--red); color: #fff; text-decoration: none; font-weight: 700; transition: background .15s, transform .15s; }
+  .slides-link:hover { background: var(--red-deep); transform: translateY(-1px); }
+  .slides-link svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  .slides-link small { display: block; font-weight: 500; font-size: .78rem; opacity: .85; }
+
   @media print {
     .topbar, .hero .cta, .totop, .quiz, .cv-actions, .canvas-tools .btn, footer.site { display: none !important; }
     section.mod { padding: 24px 0; break-inside: avoid-page; }
@@ -397,10 +405,16 @@
       <a class="btn" href="#m1">Start studying</a>
       <a class="btn ghost" href="#m5">Go to the workshop task</a>
     </div>
+    <div class="hero-foot">
     <div class="logos" aria-label="Partner institutions">
       <a href="https://www.vives.be/en" target="_blank" rel="noopener" title="VIVES University of Applied Sciences"><span class="logo-vives"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20-%20Hogeschool%20VIVES.png?width=500" alt="VIVES University of Applied Sciences"></span></a>
       <span class="sep" aria-hidden="true"></span>
       <a href="https://www.its.ac.id/en/" target="_blank" rel="noopener" title="Institut Teknologi Sepuluh Nopember"><img class="logo-its" src="https://en.wikipedia.org/wiki/Special:FilePath/Sepuluh_Nopember_Institute_of_Technology_Logo_With_Wordmark.svg?width=400" alt="Institut Teknologi Sepuluh Nopember (ITS)"></a>
+    </div>
+    <a class="slides-link" href="AI-SCM-2026.pdf" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M12 12v6M9 15l3 3 3-3"/></svg>
+      <span>Lecture slides<small>PDF · 1.7 MB</small></span>
+    </a>
     </div>
   </div>
 </div>
